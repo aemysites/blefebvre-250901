@@ -1,3 +1,4 @@
+/* stylelint-disable no-descending-specificity */
 .columns > div {
   display: flex;
   flex-direction: column;
@@ -30,4 +31,151 @@
     flex: 1;
     order: unset;
   }
+}
+
+
+.columns.columns9 {
+  background: #000;
+  border-bottom: 1px solid #fff;
+  padding: 36px 0 32px;
+}
+
+.columns.columns9 > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start; /* Top-align all columns */
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 56px;
+}
+
+@media (width <= 900px) {
+  .columns.columns9 > div {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+/* First column: logo and socials vertical stack, but icons horizontal */
+.columns.columns9 > div > div:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 240px;
+  min-width: 180px;
+  justify-content: flex-start; /* Prevent bottom alignment */
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+/* Logo image */
+.columns.columns9 > div > div:first-child > p:first-child {
+  margin-bottom: 14px;
+}
+
+/* "Fashion Blog" label styling */
+.columns.columns9 > div > div:first-child .button-container {
+  margin-bottom: 28px;
+  display: block;
+}
+
+.columns.columns9 > div > div:first-child .button {
+  background: none;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  border: none;
+  text-transform: uppercase;
+  box-shadow: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Social icons row */
+.columns.columns9 > div > div:first-child ul {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.columns.columns9 > div > div:first-child ul li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Hide social label buttons */
+.columns.columns9 > div > div:first-child ul .button-container {
+  display: none;
+}
+
+/* Make social icons white and size consistent */
+.columns.columns9 > div > div:first-child ul img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+  display: block;
+}
+
+/* Navigation columns: stack links vertically inside each column */
+.columns.columns9 > div > div:not(:first-child) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 160px;
+}
+
+/* Remove bullets from lists in nav columns */
+.columns.columns9 > div > div:not(:first-child) ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Row spacing for nav items */
+.columns.columns9 > div > div:not(:first-child) li {
+  margin: 0 0 11px;
+  padding: 0;
+}
+
+/* Headings (Trends, Inspire, Explore) */
+.columns.columns9 > div > div:not(:first-child) h2 {
+  color: #666;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 16px;
+  line-height: 1.35;
+}
+
+/* Navigation links styling */
+.columns.columns9 > div > div:not(:first-child) li:not(:first-child) a {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.2s;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+
+.columns.columns9 > div > div:not(:first-child) li:not(:first-child) a:hover {
+  color: #ccc;
+  text-decoration: underline;
+}
+
+/* Make sure images never scale out of control in the block */
+.columns.columns9 img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
