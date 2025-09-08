@@ -1,3 +1,4 @@
+/* stylelint-disable no-descending-specificity */
 .cards > ul {
   list-style: none;
   margin: 0;
@@ -24,4 +25,130 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+
+.cards.cards19 {
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+/* Main grid: slightly increased vertical gap for better row separation,
+   slightly increased horizontal gap for more breathing room */
+.cards.cards19 > ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 34px 40px;
+  align-items: start;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Card: ensure text uses all available space and vertical alignment is correct */
+.cards.cards19 > ul > li {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  min-width: 0;
+  height: 100%;
+  padding: 0;
+  background: none;
+  border: none;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* Remove internal margins/padding and ensure flexible width */
+.cards.cards19 .cards-card-body {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Icon container: left side of the card, icon top-aligned,
+   fine-tune with margin-top for pixel-perfect alignment */
+.cards.cards19 > ul > li > .cards-card-body:first-child {
+  margin-right: 14px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  align-self: flex-start;
+  margin-top: 2px;
+  line-height: 0;
+  box-sizing: border-box;
+}
+
+/* SVG icon image styling: top-aligned with text */
+.cards.cards19 > ul > li > .cards-card-body:first-child img {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
+  object-fit: contain;
+  line-height: 1;
+  vertical-align: top;
+  display: block;
+  align-self: flex-start;
+  box-sizing: border-box;
+}
+
+/* Text body: fill and wrap naturally */
+.cards.cards19 > ul > li > .cards-card-body:last-child {
+  flex: 1 1 0%;
+  display: flex;
+  align-items: flex-start;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.cards.cards19 > ul > li > .cards-card-body:last-child > p {
+  color: #232323;
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 0;
+  font-weight: 400;
+  background: none;
+  border: none;
+  min-width: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+}
+
+/* Remove unwanted spacing for compactness */
+.cards.cards19 > ul,
+.cards.cards19 > ul > li,
+.cards.cards19 > ul > li > .cards-card-body,
+.cards.cards19 > ul > li > .cards-card-body > p {
+  margin-block: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Prevent list items from shrinking too small and causing text wrap */
+
+/* Responsive: 2 columns, slightly reduced spacing */
+@media (width <= 900px) {
+  .cards.cards19 > ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 20px;
+  }
+}
+
+/* Responsive: 1 column, tighter spacing */
+@media (width <= 600px) {
+  .cards.cards19 > ul {
+    grid-template-columns: 1fr;
+    gap: 18px 0;
+  }
 }
