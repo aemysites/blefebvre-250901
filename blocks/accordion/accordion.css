@@ -1,8 +1,8 @@
+/* stylelint-disable no-descending-specificity */
 .accordion details {
   border: 1px solid #dadada;
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
 .accordion details + details {
   margin-top: 24px;
 }
@@ -58,4 +58,110 @@
 .accordion details[open] .accordion-item-body {
   border-top: 1px solid #dadada;
   background-color: var(--background-color);
+}
+
+
+.accordion.accordion34 {
+  background: #F8F9F4;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Clean details element for block look */
+.accordion.accordion34 details {
+  border: none;
+  margin: 0;
+  padding: 0;
+  background: none;
+}
+
+/* Horizontal divider between rows */
+.accordion.accordion34 details:not(:last-child) summary {
+  border-bottom: 1px solid #E5E6E0;
+}
+
+.accordion.accordion34 details:last-child summary {
+  border-bottom: none;
+}
+
+/* Accurate flex row layout for text and chevron */
+.accordion.accordion34 summary {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  min-height: 54px;
+  padding-left: 24px;
+  padding-right: 24px;
+  cursor: pointer;
+  background: transparent;
+  color: #252525;
+  font-size: 15px;
+  font-weight: 400;
+  outline: none;
+  box-sizing: border-box;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Remove browser marker for consistency */
+.accordion.accordion34 summary::-webkit-details-marker,
+.accordion.accordion34 summary::marker {
+  display: none;
+}
+
+/* Clean up p for perfect vertical centering */
+.accordion.accordion34 .accordion-item-label,
+.accordion.accordion34 .accordion-item-label p,
+.accordion.accordion34 summary > p {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  color: #252525;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.24;
+  padding: 0;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+/* Chevron: absolute, optically centered and sized to match text */
+.accordion.accordion34 summary::after {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  border: 2px solid #252525;
+  border-width: 2px 2px 0 0;
+  background: none;
+  pointer-events: none;
+  transform: translateY(-46%) rotate(135deg);
+  transition: transform 0.2s;
+  display: block;
+  box-sizing: border-box;
+}
+
+.accordion.accordion34 details[open] summary::after {
+  transform: translateY(-46%) rotate(-45deg);
+}
+
+/* Accordion body: match summary padding, no extra border/bg */
+.accordion.accordion34 .accordion-item-body {
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.accordion.accordion34 details[open] .accordion-item-body {
+  border-top: none;
+  background: transparent;
+}
+
+/* Remove outline for clean interactions */
+.accordion.accordion34 summary:focus {
+  outline: none;
 }
