@@ -34,8 +34,6 @@
   border: none;
 }
 
-/* Main grid: slightly increased vertical gap for better row separation,
-   slightly increased horizontal gap for more breathing room */
 .cards.cards19 > ul {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -49,7 +47,6 @@
   box-sizing: border-box;
 }
 
-/* Card: ensure text uses all available space and vertical alignment is correct */
 .cards.cards19 > ul > li {
   display: flex;
   flex-direction: row;
@@ -63,7 +60,6 @@
   max-width: 100%;
 }
 
-/* Remove internal margins/padding and ensure flexible width */
 .cards.cards19 .cards-card-body {
   margin: 0;
   padding: 0;
@@ -73,8 +69,6 @@
   box-sizing: border-box;
 }
 
-/* Icon container: left side of the card, icon top-aligned,
-   fine-tune with margin-top for pixel-perfect alignment */
 .cards.cards19 > ul > li > .cards-card-body:first-child {
   margin-right: 14px;
   flex-shrink: 0;
@@ -86,7 +80,6 @@
   box-sizing: border-box;
 }
 
-/* SVG icon image styling: top-aligned with text */
 .cards.cards19 > ul > li > .cards-card-body:first-child img {
   width: 24px;
   height: 24px;
@@ -100,7 +93,6 @@
   box-sizing: border-box;
 }
 
-/* Text body: fill and wrap naturally */
 .cards.cards19 > ul > li > .cards-card-body:last-child {
   flex: 1 1 0%;
   display: flex;
@@ -123,7 +115,6 @@
   box-sizing: border-box;
 }
 
-/* Remove unwanted spacing for compactness */
 .cards.cards19 > ul,
 .cards.cards19 > ul > li,
 .cards.cards19 > ul > li > .cards-card-body,
@@ -135,9 +126,6 @@
   box-sizing: border-box;
 }
 
-/* Prevent list items from shrinking too small and causing text wrap */
-
-/* Responsive: 2 columns, slightly reduced spacing */
 @media (width <= 900px) {
   .cards.cards19 > ul {
     grid-template-columns: repeat(2, 1fr);
@@ -145,10 +133,177 @@
   }
 }
 
-/* Responsive: 1 column, tighter spacing */
 @media (width <= 600px) {
   .cards.cards19 > ul {
     grid-template-columns: 1fr;
     gap: 18px 0;
   }
 }
+
+
+.cards.cards33 {
+  background: #f7f8f5;
+  padding: 24px 0;
+}
+
+/* Grid: Tighter gaps for denser block */
+.cards.cards33 > ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 12px 14px;
+  place-items: stretch stretch;
+  margin: 0 auto;
+  max-width: 1050px;
+  padding: 0 12px;
+  list-style: none;
+}
+
+/* Card: more compact, softer shadow, fixed height, less border-radius */
+.cards.cards33 > ul > li {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 2%);
+  padding: 10px 14px;
+  min-height: 240px;
+  height: 240px;
+  border: none;
+  overflow: hidden;
+}
+
+/* Image section: visually larger and vertically stretched */
+.cards.cards33 .cards-card-image {
+  flex: 0 1 58%;
+  min-width: 180px;
+  max-width: 340px;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  height: 100%;
+  margin-right: 20px;
+}
+
+.cards.cards33 .cards-card-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Text section: top-aligned, fills space, tight gap */
+.cards.cards33 .cards-card-body {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2px;
+  min-width: 0;
+  align-self: stretch;
+  height: 100%;
+  padding-bottom: 2px;
+}
+
+/* Top label and time: grouped, minimal padding/margin, smaller pill */
+.cards.cards33 .cards-card-body > p:nth-child(1),
+.cards.cards33 .cards-card-body > p:nth-child(2) {
+  font-size: 10px;
+  line-height: 1.1;
+  margin: 0;
+  vertical-align: top;
+  display: inline-block;
+}
+
+.cards.cards33 .cards-card-body > p:nth-child(1) {
+  background: #f2f2f2;
+  color: #888;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 10px;
+  padding: 1.5px 7px;
+  margin-right: 3px;
+}
+
+.cards.cards33 .cards-card-body > p:nth-child(2) {
+  color: #888;
+  font-weight: 400;
+  margin-right: 0;
+}
+
+/* Title: strong, uppercase, very close to labels, larger */
+.cards.cards33 .cards-card-body h3 {
+  margin: 3px 0 0;
+  color: #222;
+  font-size: 26px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.08;
+}
+
+/* Description: concise, tight spacing */
+.cards.cards33 .cards-card-body p:nth-child(4) {
+  color: #444;
+  font-size: 15px;
+  font-weight: 400;
+  margin: 6px 0 0;
+  line-height: 1.6;
+}
+
+/* "Read" link: always flush bottom, baseline aligned */
+.cards.cards33 .cards-card-body p:last-child {
+  color: #444;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: auto;
+  text-decoration: none;
+  cursor: pointer;
+  padding-bottom: 1px;
+}
+
+/* Responsive: stack cards, image prominent and aspect ratio preserved */
+@media (width <= 900px) {
+  .cards.cards33 > ul {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+    padding: 0 2px;
+    max-width: 100%;
+  }
+
+  .cards.cards33 > ul > li {
+    flex-direction: column;
+    min-height: 0;
+    height: auto;
+    padding: 8px 2px;
+    align-items: flex-start;
+  }
+
+  .cards.cards33 .cards-card-image {
+    margin-right: 0;
+    margin-bottom: 12px;
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+    justify-content: flex-start;
+    height: 150px;
+  }
+
+  .cards.cards33 .cards-card-image img {
+    max-width: 100%;
+    min-height: 120px;
+    height: 100%;
+    aspect-ratio: 16/9;
+  }
+
+  .cards.cards33 .cards-card-body {
+    min-width: 0;
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Prevent excessive whitespace for short content */
